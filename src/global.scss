@@ -35,3 +35,59 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+.main-color{
+  color: #FF8118 !important;
+}
+.main-bg{
+  background-color: #FF8118 !important;
+}
+.cr{
+  cursor: pointer;
+}
+
+/* تخصيص تصميم ngx-otp-input */
+ngx-otp-input {
+  .ngx-otp-input-form {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ngx-otp-input-box {
+    background-color: #ffffff !important;
+    border: 2px solid #aaa !important;
+    border-radius: 8px !important;
+    width: 45px !important;
+    height: 60px !important;
+    font-size: 20px !important;
+    color: #000 !important;
+    text-align: center !important;
+    outline: none !important;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .ngx-otp-input-filled {
+    border-color: #ffb778 !important;
+  }
+
+  .ngx-otp-input-success {
+    border-color: #28a745 !important;
+    background-color: #e9f9ee !important;
+  }
+
+  .ngx-otp-input-failed {
+    border-color: #dc3545 !important;
+    background-color: #fdeaea !important;
+  }
+
+  .ngx-blinking-cursor {
+    color: #ff8118 !important;
+  }
+
+  .ngx-otp-input-disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+  }
+}

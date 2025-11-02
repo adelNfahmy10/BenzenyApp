@@ -1,0 +1,71 @@
+.home-page{
+  background-color: #878787;
+}
+.icon-search {
+  z-index: 10000;
+  width: fit-content;
+  top: 5%;
+  left: 6%;
+}
+
+.icon-help {
+  z-index: 10000;
+  width: fit-content;
+  top: 5%;
+  right: 6%;
+}
+
+.icon-camera {
+  z-index: 10000;
+  width: fit-content;
+  bottom: 25%;
+  left: 6%;
+  border: 2px solid #FF8118;
+}
+
+.icon-recenter{
+  width: fit-content;
+  bottom: 14%;
+  left: 6%;
+  border: 2px solid #FF8118;
+}
+
+.icon-parking {
+  z-index: 10000;
+  width: fit-content;
+  bottom: 25%;
+  right: 6%;
+  border: 2px solid #FF8118;
+}
+
+.icon-menu{
+  z-index: 10000;
+  width: fit-content;
+  bottom: 15%;
+  right: 6%;
+  border: 2px solid #FF8118;
+}
+
+.search-input {
+  top: 0;
+  left: 76px;
+  width: 60%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: fadeInDown 0.4s ease;
+  z-index: 10001;
+}
+
+
+/* ✅ Animation keyframes */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

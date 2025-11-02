@@ -1,0 +1,17 @@
+.serives{
+  span{
+    font-size: 16px;
+  }
+}
+.transation-detail{
+  position: relative;
+  .add-receipt{
+    --background: #CECECE;
+    border: 10px solid #EFEFEF;
+    border-radius: 30px;
+  }
+
+  .add-comment{
+    --background: #F793203D;
+  }
+}
