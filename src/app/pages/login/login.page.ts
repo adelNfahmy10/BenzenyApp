@@ -1,21 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular/standalone';
-import { RouterLink } from '@angular/router';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IonContent, IonButton, IonItem, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonLabel, IonInput, IonInputPasswordToggle  } from '@ionic/angular/standalone';
+import { Router} from '@angular/router';
+import { Login } from 'src/core/services/login/login';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonButton, IonContent, CommonModule, FormsModule, RouterLink]
+  imports: [IonInput, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonItem, IonButton, IonContent, CommonModule, FormsModule, IonInputPasswordToggle, ReactiveFormsModule]
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  private readonly _Router = inject(Router);
+  private readonly _FormBuilder = inject(FormBuilder);
+  private readonly _Login = inject(Login);
 
-  constructor() { }
+  loginForm:FormGroup = this._FormBuilder.group({
+    username:['+966', [Validators.required]],
+    password:[null, [Validators.required]]
+  });
 
-  ngOnInit() {
+  submitLoginForm(){
+    let data = this.loginForm.value;
+    let { username, password } = this.loginForm.value;
+
+    this._Login.login(data).subscribe({
+      next: (res)=>{
+        let data = res.data;
+        console.log(data);
+        localStorage.setItem('userId', data.userId);
+        localStorage.setItem('fullName', data.fullName);
+        localStorage.setItem('refreshToken', data.refreshToken);
+        if (username === password) {
+          this._Router.navigate(['/verified']);
+        } else {
+          this._Router.navigate(['/tabs/home']);
+          localStorage.setItem('token', data.accessToken);
+        }
+      }
+    });
   }
 
 }

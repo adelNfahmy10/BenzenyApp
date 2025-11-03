@@ -35,15 +35,15 @@
 
     <div class="verfiy-inputs">
       <div class="d-flex flex-column justify-content-center align-items-center gap-2">
-        <div class="px-5">
-          <ngx-otp-input  #otpInput [options]="otpOptions" (otpChange)="onOtpChange($event)" (otpComplete)="onOtpComplete($event)">></ngx-otp-input>
+        <div class="px-5 text-center">
+          <ngx-otp-input  #otpInput [options]="otpOptions" (otpChange)="onOtpChange($event)" (otpComplete)="onOtpComplete($event)"></ngx-otp-input>
           <p class="main-color timer my-2 mb-0">04:57</p>
           <div class="notes">
             <p>We send verification code to your number that last with ******321 .</p>
             <p>I didn't received the code? <span class="main-color cr text-decoration-underline">Send again</span></p>
           </div>
         </div>
-        <ion-button fill="clear" class="text-white main-bg rounded-3 w-75" routerLink="/tabs">Verify</ion-button>
+        <ion-button fill="clear" class="text-white main-bg rounded-3 w-75" (click)="verifyCode()">Verify</ion-button>
       </div>
     </div>
   </div>

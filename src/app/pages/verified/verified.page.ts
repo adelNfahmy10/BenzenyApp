@@ -9,7 +9,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './verified.page.html',
   styleUrls: ['./verified.page.scss'],
   standalone: true,
-  imports: [IonButton, IonContent, CommonModule, FormsModule, NgxOtpInputComponent, IonRouterLink, RouterLink]
+  imports: [IonButton, IonContent, CommonModule, FormsModule, NgxOtpInputComponent]
 })
 export class VerifiedPage {
   private readonly _Router = inject(Router)
@@ -30,13 +30,19 @@ export class VerifiedPage {
   onOtpComplete(code: string) {
     this.otpCode = code;
     console.log('Complete OTP:', this.otpCode);
+    if (this.otpCode.length === 6) {
+      console.log('Final OTP Code:', this.otpCode);
+      this._Router.navigate(['/changepassword']);
+    } else {
+      console.log('Please enter the full OTP code');
+    }
   }
 
   // عند الضغط على زر "Verify"
   verifyCode() {
     if (this.otpCode.length === 6) {
       console.log('Final OTP Code:', this.otpCode);
-      this._Router.navigate(['/home'])
+      this._Router.navigate(['/changepassword']);
     } else {
       console.log('Please enter the full OTP code');
     }
