@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonItem, IonAvatar, IonImg, IonLabel, IonModal, IonSearchbar, IonList, IonChip } from '@ionic/angular/standalone';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonInput, IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, RouterLink]
+  imports: [IonChip, IonList, IonSearchbar, IonModal, IonLabel, IonImg, IonAvatar, IonItem, IonInput, IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, RouterLink]
 })
 export class HomePage {
   private readonly _ToastController = inject(ToastController)
@@ -56,9 +56,8 @@ export class HomePage {
   }
 
   showSearch = false;
-
-  toggleSearch() {
-    this.showSearch = !this.showSearch;
-  }
+  // toggleSearch() {
+  //   this.showSearch = !this.showSearch;
+  // }
 
 }

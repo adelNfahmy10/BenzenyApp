@@ -1,0 +1,50 @@
+ion-list{
+  padding: 0;
+}
+
+ion-item{
+  --color: #000;
+  --background: #fff
+}
+
+.settings-page {
+  ion-avatar{
+    background-color : #FF8118;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  ion-list {
+    background: transparent;
+  }
+
+  ion-item {
+    --background: #fff;
+    --border-color: #eee;
+    --padding-start: 16px;
+    --inner-padding-end: 8px;
+    border-radius: 12px;
+    margin: 6px 16px;
+  --color: #000;
+
+    ion-icon {
+      font-size: 22px;
+    }
+
+    &:hover {
+      transform: scale(1.01);
+      transition: 0.2s ease;
+    }
+  }
+
+  .logout-item {
+    margin-top: 20px;
+    ion-label {
+      font-weight: 600;
+    }
+  }
+
+  .profile-card {
+    border-bottom: 1px solid #e5e7eb;
+  }
+}

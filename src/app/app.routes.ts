@@ -27,11 +27,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/transactions-details/transactions-details.page').then( m => m.TransactionsDetailsPage)
   },
   {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
+    path: 'settings',
+    loadComponent: () => import('./pages/setting/setting.page').then( m => m.SettingPage)
   },
   {
-    path: 'system',
-    loadComponent: () => import('./pages/system/system.page').then( m => m.SystemPage)
+    path: '',
+    loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
   }
 ];
