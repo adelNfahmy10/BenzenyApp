@@ -13,6 +13,7 @@ import { headerInterceptor } from './core/interceptors/header/header-interceptor
 defineCustomElements(window);
 
 import { register } from 'swiper/element/bundle';
+import { loadingInterceptor } from './core/interceptors/loading/loading-interceptor';
 
 register();
 
@@ -21,6 +22,6 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient(withFetch(), withInterceptors([headerInterceptor]))
+    provideHttpClient(withFetch(), withInterceptors([headerInterceptor, loadingInterceptor]))
   ],
 });
