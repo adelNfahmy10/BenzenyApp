@@ -16,4 +16,9 @@ export class Login {
   changePassword(data:any):Observable<any>{
     return this._HttpClient.post(`${environment.baseUrl}api/Auth/change-password`, data);
   }
+
+  refreshToken(data:any):Observable<any>{
+    return this._HttpClient.post(`${environment.baseUrl}api/Auth/refresh`, data);
+  }
+
 }

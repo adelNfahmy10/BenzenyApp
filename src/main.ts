@@ -6,16 +6,21 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { headerInterceptor } from './core/interceptors/header/header-interceptor';
 
 // Call the element loader before the bootstrapModule/bootstrapApplication call
 defineCustomElements(window);
+
+import { register } from 'swiper/element/bundle';
+
+register();
 
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient()
+    provideHttpClient(withFetch(), withInterceptors([headerInterceptor]))
   ],
 });

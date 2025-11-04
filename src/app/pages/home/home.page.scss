@@ -1,64 +1,89 @@
-.home-page{
+/* ------------------------------
+   🧩 Home Page Styles
+------------------------------ */
+.home-page {
   background-color: #878787;
 }
-.icon-search {
+
+/* ------------------------------
+   🔍 Icons
+------------------------------ */
+.icon-search,
+.icon-help,
+.icon-camera,
+.icon-recenter,
+.icon-parking,
+.icon-menu {
+  position: absolute;
   z-index: 10000;
   width: fit-content;
+}
+
+.icon-search {
   top: 5%;
   left: 6%;
 }
 
 .icon-help {
-  z-index: 10000;
-  width: fit-content;
   top: 5%;
   right: 6%;
 }
 
 .icon-camera {
-  z-index: 10000;
-  width: fit-content;
   bottom: 25%;
   left: 6%;
-  border: 2px solid #FF8118;
+  border: 2px solid var(--app-primary, #ff8118);
 }
 
-.icon-recenter{
-  width: fit-content;
+.icon-recenter {
   bottom: 14%;
   left: 6%;
-  border: 2px solid #FF8118;
+  border: 2px solid var(--app-primary, #ff8118);
 }
 
 .icon-parking {
-  z-index: 10000;
-  width: fit-content;
   bottom: 25%;
   right: 6%;
-  border: 2px solid #FF8118;
+  border: 2px solid var(--app-primary, #ff8118);
 }
 
-.icon-menu{
-  z-index: 10000;
-  width: fit-content;
+.icon-menu {
   bottom: 15%;
   right: 6%;
-  border: 2px solid #FF8118;
+  border: 2px solid var(--app-primary, #ff8118);
 }
 
+/* ------------------------------
+   🔎 Search Input
+------------------------------ */
 .search-input {
+  position: absolute;
   top: 0;
   left: 76px;
   width: 60%;
-  background: white;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   animation: fadeInDown 0.4s ease;
   z-index: 10001;
 }
 
+/* ------------------------------
+   🧭 Toolbar & Buttons
+------------------------------ */
+ion-toolbar {
+  --background: var(--app-primary, #ff8118);
+}
 
-/* ✅ Animation keyframes */
+.order-btn {
+  --background: #fff;
+  --color: var(--app-primary, #ff8118);
+  border-radius: 20px;
+}
+
+/* ------------------------------
+   ✨ Animations
+------------------------------ */
 @keyframes fadeInDown {
   0% {
     opacity: 0;

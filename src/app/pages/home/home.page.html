@@ -189,4 +189,42 @@
       </ion-content>
     </ng-template>
   </ion-modal>
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title class="fw-bold">Advertisement</ion-title>
+
+          @if (showCloseBtn) {
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">
+                <ion-icon name="close-outline" size="large"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          } @else {
+            <ion-buttons slot="end">
+              <ion-badge color="light" class="px-3 py-2 fs-6 rounded-5">
+                {{ countTimeAds }}s
+              </ion-badge>
+            </ion-buttons>
+          }
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <swiper-container class="w-100 h-100 bg-white" [slidesPerView]="1.2" [spaceBetween]="10" [centeredSlides]="true" autoplay-delay="2000" autoplay-disable-on-interaction="false">
+           @for (ad of allAds(); track $index) {
+            <swiper-slide class="d-flex justify-content-evenly align-items-center text-center flex-column p-4 shadow-lg">
+              <img [src]="ad.image" [alt]="ad.name" class="rounded-3 w-100" />
+              <div>
+                <h2 class="main-color fw-bold">{{ad.name}}</h2>
+                <p class="text-muted">{{ad.description}}</p>
+              </div>
+              <ion-button class="order-btn" expand="block">Order Now</ion-button>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

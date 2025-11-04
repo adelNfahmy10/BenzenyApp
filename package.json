@@ -39,6 +39,7 @@
     "ng-otp-input": "^2.0.9",
     "ngx-otp-input": "^1.1.4",
     "rxjs": "~7.8.0",
+    "swiper": "^12.0.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
